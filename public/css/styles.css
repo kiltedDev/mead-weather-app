@@ -60,3 +60,31 @@ button {
   color: white;
   padding: 8px;
 }
+
+a.source-link {
+  position: relative;
+  transition: clip-path 275ms ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.source-link:hover span::before, .source-link:focus span::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.source-link span {
+  position: relative;
+  display: inline-block;
+  color: blue;
+  box-sizing: border-box;
+}
+
+.source-link span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: attr(data-content);
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  transition: clip-path 275ms ease;
+}
